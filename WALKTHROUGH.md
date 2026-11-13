@@ -23,8 +23,8 @@ Alex's setup (done)
 ## Alex
 
 - [x] Setup: Graph, generator, Bellman-Ford checker, interface, Counters, tests
-- [ ] Indexed heap version, `IndexedHeapDijkstra.java` (Fri)
-- [ ] Demo program: load or generate a graph, run all 3, print distance + path + time (Sat)
+- [x] Indexed heap version, `IndexedHeapDijkstra.java`
+- [x] Demo program, `Demo.java` (picks up your version automatically once it's done)
 - [ ] Review PRs
 - [ ] Slides: system design + UML (2+), development strategy (5+)
 - [ ] Report, later: lit review, methods for my part

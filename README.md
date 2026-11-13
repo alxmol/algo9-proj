@@ -33,6 +33,12 @@ javac -d out src/*.java
 java -cp out Tests
 ```
 
+Demo (what we run in the presentation):
+
+```bash
+java -Xmx2g -cp out Demo
+```
+
 ## Files
 
 | File | What it does |
@@ -45,9 +51,12 @@ java -cp out Tests
 | `BellmanFord.java` | The answer key, plus `compare()` to check a version's answer |
 | `ArrayDijkstra.java` | Array scan version |
 | `IndexedHeapDijkstra.java` | Indexed heap version |
+| `IndexedMinHeap.java` | The indexed heap it uses (with decrease-key) |
 | `LazyHeapDijkstra.java` | Lazy PriorityQueue version |
 | `Tests.java` | Runs all the checks |
 | `Benchmark.java` | Times every version, saves results as CSV |
+| `Demo.java` | The live demo: runs every version, prints distance, path and time |
+| `graphs/demo.txt` | Small graph for the demo |
 
 ## Who's doing what
 
