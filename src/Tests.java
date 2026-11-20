@@ -3,6 +3,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * Checks that everything works. Run it after any change:
@@ -41,6 +42,9 @@ public class Tests {
 
         System.out.println("\n== Dijkstra versions ==");
         testVersions();
+
+        System.out.println("\n== Large heap agreement ==");
+        testHeapAgreementOnLargeGraphs();
 
         System.out.println("\n== Counters ==");
         testCounters();
@@ -307,6 +311,24 @@ public class Tests {
             }
         }
     }
+
+    static void testHeapAgreementOnLargeGraphs() {
+        int[] sizes = {10_000, 100_000};
+
+        for (int size : sizes) {
+            Graph g = GraphGenerator.generate(
+                    size, GraphGenerator.Density.SPARSE, 1);
+
+            Result indexed = new IndexedHeapDijkstra().run(
+                    g, GraphGenerator.SOURCE, Counters.off());
+
+            Result lazy = new LazyHeapDijkstra().run(
+                    g, GraphGenerator.SOURCE, Counters.off());
+
+            check(Arrays.equals(indexed.dist(), lazy.dist()),
+                    "indexed and lazy heaps agree on V=" + size);
+    }
+}
 
     // ------------------------------------------------------------------
     // Helpers

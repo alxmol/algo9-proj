@@ -54,16 +54,16 @@ Alex's setup (done)
 
 Left to do (tonight, in this order):
 
-- [ ] Full run, about 20 seconds:
+- [x] Full run, about 20 seconds:
   ```bash
   git pull
   javac -d out src/*.java && java -Xmx4g -cp out Benchmark
   ```
   Write down what it prints about the machine, plus your CPU model and RAM from your system settings (we said we'd record those).
-- [ ] Repeat run: the benchmark overwrites the CSVs, so first rename them to `results/times-run1.csv` and `results/counts-run1.csv`, then run it again. If the medians from both runs are close, the results are stable.
-- [ ] Check the two heaps agree on the big graphs: Bellman-Ford is too slow at V = 10k and 100k, so run the indexed heap and lazy heap on the same sparse graph and check their `dist` arrays match. About 10 lines, e.g. a small test in `Tests.java`.
-- [ ] Crossover: from the CSVs, which version is fastest at each size and density, and where the winner changes. A few lines or a small table in `results/crossover.md` is enough.
-- [ ] Push it all in a PR: both runs' CSVs, the heap check and the crossover notes.
+- [x] Repeat run: the benchmark overwrites the CSVs, so first rename them to `results/times-run1.csv` and `results/counts-run1.csv`, then run it again. If the medians from both runs are close, the results are stable.
+- [x] Check the two heaps agree on the big graphs: Bellman-Ford is too slow at V = 10k and 100k, so run the indexed heap and lazy heap on the same sparse graph and check their `dist` arrays match. About 10 lines, e.g. a small test in `Tests.java`.
+- [x] Crossover: from the CSVs, which version is fastest at each size and density, and where the winner changes. A few lines or a small table in `results/crossover.md` is enough.
+- [x] Push it all in a PR: both runs' CSVs, the heap check and the crossover notes.
 
 ## Slides
 
