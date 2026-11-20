@@ -40,7 +40,7 @@ Alex's setup (done)
 
 - [x] Lazy heap version, `LazyHeapDijkstra.java` (Alex took it over)
 - [x] Check every version counts the right things, now `testCounters()` in `Tests.java` (Alex took it over)
-- [ ] Plots, once Luke has CSVs: time vs E (log-log) with the theory curves on top, time ratios per density, op counts, queue sizes (Alex taking over)
+- [x] Plots: `results/make_plots.py` → `results/plots/` (Alex took it over)
 - [ ] Results slides (Alex taking over)
 - [ ] Put the deck together (Alex taking over)
 
@@ -69,7 +69,7 @@ Left to do (tonight, in this order):
 
 Deck is in Google Slides. Everything's done except:
 
-- [ ] Runtime plots, theory curves on top (Alex, needs Luke's CSVs)
+- [x] Runtime plots, theory curves on top
 - [ ] Crossover + op counts (Luke and Alex, needs the full run)
 - [ ] Conclusion: what we found (Alex, needs results). Lessons learned and future work can go in now
 - [ ] Screenshot of a merged PR on the GitHub workflow slide (whoever merges first)

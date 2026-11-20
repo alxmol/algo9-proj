@@ -26,6 +26,12 @@ Fibonacci heaps have a better bound, O(E + V log V), but the proposal kept them 
 - Every version checked against Bellman-Ford before we time anything
 - 10 graphs per setup, JVM warmed up, median + IQR, results saved as CSV
 
+Results are in `results/`: both full runs, `crossover.md` (fastest version per size and density) and the plots in `results/plots/`. To redo the plots (needs matplotlib):
+
+```bash
+python3 results/make_plots.py
+```
+
 ## Build and run
 
 Needs Java 17 or newer. No build tool.
@@ -77,6 +83,7 @@ java -Xmx2g -cp out Demo generate 3000 dense 1
 | `Demo.java` | The live demo: runs every version, prints distance, path, time and queue size |
 | `graphs/demo.txt` | Small graph for the demo |
 | `graphs/edge-cases.txt` | One of each tricky input, for the demo |
+| `results/` | Benchmark CSVs (both runs), crossover table, plots and the script that makes them |
 
 ## Who's doing what
 
