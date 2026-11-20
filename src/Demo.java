@@ -17,6 +17,9 @@ import java.util.Map;
  *       The full demo: the small graph in graphs/demo.txt, the edge cases in
  *       graphs/edge-cases.txt, then a big dense graph and a big sparse graph.
  *
+ *   java -Xmx2g -cp out Demo step
+ *       Same thing, but waits for Enter between parts (for presenting).
+ *
  *   java -cp out Demo file graphs/demo.txt 0 6
  *       Any graph file, from source 0 to target 6.
  *
@@ -28,7 +31,9 @@ public class Demo {
 
     public static void main(String[] args) throws Exception {
         if (args.length == 0) {
-            fullDemo();
+            fullDemo(false);
+        } else if (args[0].equals("step") && args.length == 1) {
+            fullDemo(true);
         } else if (args[0].equals("file") && args.length == 4) {
             Graph g = Graph.load(args[1]);
             runAll("Graph from " + args[1], g, Integer.parseInt(args[2]), Integer.parseInt(args[3]));
@@ -43,6 +48,7 @@ public class Demo {
         } else {
             System.out.println("Usage:");
             System.out.println("  java -cp out Demo");
+            System.out.println("  java -cp out Demo step");
             System.out.println("  java -cp out Demo file <graph file> <source> <target>");
             System.out.println("  java -cp out Demo generate <V> <sparse|medium|dense> <seed> [target]");
         }
@@ -55,16 +61,30 @@ public class Demo {
      * 3. A big dense graph, where the array scan should hold up well.
      * 4. A big sparse graph, where the heaps should pull ahead.
      */
-    static void fullDemo() throws Exception {
+    static void fullDemo(boolean step) throws Exception {
         runAll("1) Small graph (graphs/demo.txt)", Graph.load("graphs/demo.txt"), 0, 6);
+        waitForEnter(step);
 
         edgeCaseDemo();
+        waitForEnter(step);
 
         Graph dense = GraphGenerator.generate(3000, GraphGenerator.Density.DENSE, 1);
         runAll("3) Dense graph, V = 3,000", dense, GraphGenerator.SOURCE, 2999);
+        waitForEnter(step);
 
         Graph sparse = GraphGenerator.generate(20_000, GraphGenerator.Density.SPARSE, 1);
         runAll("4) Sparse graph, V = 20,000", sparse, GraphGenerator.SOURCE, 19_999);
+    }
+
+    private static final java.util.Scanner keyboard = new java.util.Scanner(System.in);
+
+    /** In step mode, pause so the presenter can talk through each part. */
+    static void waitForEnter(boolean step) {
+        if (!step) {
+            return;
+        }
+        System.out.print("\n(press Enter for the next part) ");
+        keyboard.nextLine();
     }
 
     /**

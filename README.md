@@ -47,6 +47,8 @@ Demo (what we run in the presentation):
 java -Xmx2g -cp out Demo
 ```
 
+Add `step` at the end to pause between parts (what we use when presenting).
+
 It runs every finished version on four graphs and prints time, max queue size (our memory measure), distance and path:
 
 1. Small graph you can follow by hand (`graphs/demo.txt`)
@@ -88,3 +90,5 @@ java -Xmx2g -cp out Demo generate 3000 dense 1
 ## Who's doing what
 
 See [WALKTHROUGH.md](WALKTHROUGH.md). Presentation is Fri Nov 20, report is due Mon Nov 30.
+
+For the presentation itself (who says what, the demo, likely questions), see [PRESENTATION.md](PRESENTATION.md).

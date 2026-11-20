@@ -88,7 +88,8 @@ Keep slide titles as the takeaway ("Heaps win on sparse graphs"), not just a lab
 | Tue Nov 17 | Anthony: plots. Luke: results + crossover. Alex: design + dev strategy slides |
 | Wed Nov 18 | Luke: repeat runs. Anthony: results slides, deck together |
 | Thu Nov 19 | Project done. Timed run with demo (keep it 12 min) |
-| Fri Nov 20 | Submit by noon (due 3 PM). Present 4:30 |
+| Fri Nov 20 | Present 4:30 |
+| Sat Nov 21 | Submit by end of day |
 | Nov 21 – 29 | Write report from notes, plots, slides. Alsean puts it together |
 | Mon Nov 30 | Report due |
 
